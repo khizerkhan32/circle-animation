@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Full Width Background with Centered Image</title>
+    <style>
+        /* CSS Styles */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            margin: 0;
+            background-image: url('./files/back-color.jpg');
+            /* Replace 'background.jpg' with your image path */
+            background-size: cover;
+
+            font-family: Arial, sans-serif;
+            
+        }
+        .titi{
+            overflow-x: clip;
+        }
+
+        .container0 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+.container0 * {
+    max-width: 100%; 
+    width: auto; 
+    height: auto; 
+    box-sizing: border-box; 
+}
+
+
+.container0 img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+        p.dot1 {
+
+            color: black;
+            background-color: white;
+            font-weight: 800;
+            font-size: 25px;
+            z-index: 2;
+            position: absolute;
+            top: 475px;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            align-items: center;
+            left: calc(50% + 5px);
+            transform: translate(-50%, -50%);
+        }
+
+        .head-para {
+            display: flex;
+            width: 100%;
+            position: absolute;
+            top: 30px;
+            z-index: 1;
+            flex-direction: column;
+        }
+
+        .header-text {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            margin: 10px;
+            /* Adjust as needed */
+        }
+
+        .orange {
+            color: orange;
+        }
+
+        .paragraph1 {
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .paragraph2 {
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+
+
+        .centered-image {
+            position: absolute;
+            top: 470px;
+            left: 50%;
+            padding-top: 20px;
+            transform: translate(-50%, -50%);
+            
+        
+        }
+
+        .centered-image-2 {
+            width: 200px;
+            position: absolute;
+            top: 500px;
+            left: calc(50% + 5px);
+            transform: translate(-50%, -50%);
+            animation-fill-mode: forwards;
+        }
+        
+      .centered-image-2 {
+        animation: fadein 1s linear infinite;
+        /* Fade in the first image over 2 seconds, loop infinitely */
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+        .centered-image-3 {
+            width: 200px;
+            position: absolute;
+            top: 500px;
+            left: calc(50% + 5px);
+            transform: translate(-50%, -50%);
+            animation-fill-mode: forwards;
+        }
+        .centered-image-3 {
+            animation: fadein 1s linear 0.8s infinite;
+        /* Fade in the first image over 2 seconds, loop infinitely */
+      }
+      .centered-image-4 {
+            width: 200px;
+            position: absolute;
+            top: 500px;
+            left: calc(50% + 5px);
+            transform: translate(-50%, -50%);
+            z-index: -99999;
+      }
+
+        .title-1 {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 245px;
+            z-index: -1;
+            left: calc(50% + 230px);
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+        }
+
+        img.v1 {
+            position: absolute;
+            top: 260px;
+            z-index: -1;
+            left: calc(50% + 230px);
+            transform: translate(-50%, -50%);
+        }
+
+
+        .title-2 {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 440px;
+            z-index: -1;
+            left: calc(50% + 440px);
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+        }
+
+        img.v2 {
+            top: 400px;
+            left: calc(50% + 240px);
+            position: absolute;
+            z-index: -1;
+        }
+
+        .title-3 {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 640px;
+            z-index: -1;
+            left: calc(50% + 380px);
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+        }
+
+        img.v3 {
+            top: 610px;
+            left: calc(50% + 170px);
+            position: absolute;
+            z-index: -1;
+        }
+
+        .title-4 {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 640px;
+            z-index: -1;
+            left: calc(50% + -440px);
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+        }
+
+        img.v4 {
+            top: 610px;
+            left: calc(50% + -540px);
+            position: absolute;
+            z-index: -1;
+            transform: scaleX(-1);
+        }
+
+        .title-5 {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 440px;
+            z-index: -1;
+            left: calc(50% + -495px);
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+        }
+
+        img.v5 {
+            top: 410px;
+            left: calc(50% + -620px);
+            position: absolute;
+            z-index: -1;
+            transform: scaleX(-1);
+        }
+
+        img.line {
+            top: 268px;
+            left: calc(50% + -300px);
+            position: absolute;
+            z-index: -1;
+            display: none;
+        }
+
+        p.paragraph1 {
+            display: none;
+            top: 300px;
+            left: 300px;
+            /* Initially hide the paragraph */
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        .area {
+            cursor: pointer;
+        }
+
+        .btn-text {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            top: 520px;
+            display: none;
+            left: calc(50% + 165px);
+            transform: translate(-50%, -50%);
+            gap: 20px;
+        }
+
+
+        button.btn {
+            width: 126px;
+            height: 39px;
+            font-size: 18px;
+            border: none;
+            font-weight: 700;
+            color: white;
+            border-radius: 10px;
+            background-color: #ff5c00;
+        }
+
+        p.read {
+            font-size: 22px;
+            color: #ff5c00;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+        @media(max-width: 1350px){
+            img.v1 {
+                width: 320px;
+                
+                left: calc(50% + 203px);
+                top: 266px;
+            }
+            img.v2 {
+                width: 320px;
+            }
+            img.v3 {
+                width: 320px;
+            }
+            img.v4 {
+                width: 320px;
+                left: calc(50% + -467px);
+            }
+            img.v5 {
+                width: 310px;
+                left: calc(50% + -548px);
+            }
+
+            #pentagon{
+                width: 699px;
+            }
+            .title-5 {    
+            font-size: 18px;  
+            left: calc(50% + -440px);
+            width: 172px;  
+            }
+            .title-4 {    
+            font-size: 18px;  
+            left: calc(50% + -376px);
+            width: 120px;  
+            }
+            .title-3 {    
+            font-size: 18px;
+            left: calc(50% + 354px);
+            width: 252px;
+             
+            }
+            .title-2 {    
+            font-size: 18px;
+            top: 432px;
+            width: 252px;
+
+            left: calc(50% + 432px);  
+            
+            }
+            .title-1 {    
+            font-size: 18px;  
+            top: 247px;
+            
+            left: calc(50% + 215px);
+            }
+            .centered-image-4 {
+            width: 185px;
+            }
+            .centered-image-2 {
+            width: 185px;
+            }
+            .centered-image-3 {
+            width: 185px;
+            }
+            p.dot1 {
+    
+            font-size: 22px;
+            height: 62px;
+            width: 65px;
+            }
+        }
+        @media(max-width: 1150px){
+            .title-1 {
+    font-size: 16px;
+            }
+            .title-2 {
+    font-size: 16px;
+            }
+            .title-3 {
+    font-size: 16px;
+            }
+            .title-4 {
+    font-size: 16px;
+            }
+            .title-5 {
+    font-size: 16px;
+            }
+            img.v1 {
+    width: 295px;
+    left: calc(50% + 180px);
+}
+            img.v2 {
+                width: 285px;
+                left: calc(50% + 232px);
+    
+}        
+img.v3 {
+    width: 295px;
+    
+}
+img.v4 {
+    width: 306px;
+    left: calc(50% + -454px)
+    
+}
+img.v5 {
+    width: 295px;
+    left: calc(50% + -536px);
+    
+}
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="head-para">
+
+        <p class="header-text" style="font-size: 30px; font-weight: 700;"> <span class="orange">3CS –
+                Concertium’s</span> Collective
+            Coverage Suite</p>
+
+        <p class="paragraph1">Introducing 3CS, Concertium's proprietary modernized Security Operations methodology for
+            the Enterprise.
+        <p class="paragraph2">Defend and neutralize sophisticated threats with precision while receiving expert guidance
+            on compliance, risk, and post-breach strategies</p>
+        </p>
+
+
+
+
+    </div>
+    </div>
+
+    <div class="container0">
+
+        <p class="dot1">3CS</p>
+
+        <!-- Your centered image goes here -->
+        <img id="pentagon" class="centered-image" src="./files/pentagon.png"  usemap="#image-map">
+        <map name="image-map">
+
+            <area onclick="toggleParagraph('para1')" class="area1" target="" alt="" title="" href="" coords="374,146,42"
+                shape="circle">
+            <area onclick="toggleParagraph('para2')" class="area2" target="" alt="" title="" href="" coords="588,294,43"
+                shape="circle">
+            <area onclick="toggleParagraph('para3')" class="area3" target="" alt="" title="" href="" coords="507,541,43"
+                shape="circle">
+            <area onclick="toggleParagraph('para4')" class="area4" target="" alt="" title="" href="" coords="259,541,43"
+                shape="circle">
+            <area onclick="toggleParagraph('para5')" class="area5" target="" alt="" title="" href="" coords="162,306,42"
+                shape="circle">
+        </map>
+        <div class="circle-images">
+            </p>
+            <img class="centered-image-4" src="./files/blue circle.png" alt="Centered Image 2">
+            <img class="centered-image-2" src="./files/1Frame.png" alt="Centered Image 2">
+            <img class="centered-image-3" src="./files/2Frame.png" alt="Centered Image 2">
+        </div>
+    </div>
+    <div>
+
+    </div>
+
+    <div class="titi">
+
+        <h2 class="title-1">Material Breach<br> Monitoring & Alerting</h2>
+        <img class="v1" src="./files/Vector.png">
+        <img class="line" src="./files/line.png">
+        <p id="para1" class="paragraph1">Concertium presents a revolutionary approach to
+            <br>cybersecurity:
+            Threat Precognition as a Service (TPaaS). This<br> cutting-edge offering leverages the power
+            of
+            artificial<br> intelligence to predict and prevent cyber attacks before they<br> occur in
+            your
+            organization, as well as your trusted partners<br> and supply-chain.
+        </p>
+
+
+        <h2 class="title-2">AI-Enhanced Advanced <br>
+            Observability</h2>
+        <img class="v2" src="./files/Vector.png">
+
+        <p id="para2" class="paragraph1">Concertium empowers you to gain unprecedented<br>visibility
+            into
+            your IT infrastructure with our<br> Advanced Cyber Observability solutions.Traditional<br>
+            security tools often struggle to keep pace with the<br> ever-evolving threat landscape,
+            leaving
+            blind spots<br> that attackers can exploit. Concertium's solutions go<br> beyond basic
+            monitoring, providing a comprehensive<br> view of your network activity, user behavior,
+            and<br>
+            system health.</p>
+
+
+        <h2 class="title-3">Automated Threat Detection<br> & Elimination</h2>
+        <img class="v3" src="./files/Vector.png">
+        <p id="para3" class="paragraph1">Concertium's Automated Threat Detection and Elimination<br>
+            solutions empower you to neutralize cyber threats with<br> unparalleled speed and efficiency
+            without human<br> intervention. Our cutting-edge technology continuously<br> monitors your
+            environment, automatically detecting and<br> eliminating material threats before they can
+            cause<br> significant damage.</p>
+
+
+        <h2 class="title-4">Post Breach<br> Management</h2>
+        <img class="v4" src="./files/Vector.png">
+        <p id="para4" class="paragraph1">Concertium understands the criticality of managing<br> material
+            cyber breaches in today's ever-evolving threat<br> landscape not only from a threat
+            perspective,
+            but also<br> from a regulatory one. Our Material Cyber Breach<br> Management service
+            provides a
+            comprehensive and<br> strategic approach to handling these complex<br> situations.
+        </p>
+
+
+        <h2 class="title-5">Compliance & Risk<br> Advisory Services</h2>
+        <img class="v5" src="./files/Vector.png">
+        <p id="para5" class="paragraph1">Concertium empowers you to navigate the ever-evolving
+            <br>compliance landscape with confidence through our<br> comprehensive Compliance and Risk
+            Management<br> Advisory Services. We provide a strategic and data-<br>driven approach to
+            help
+            you achieve and maintain<br> compliance with various regulations, while effectively<br>
+            identifying, assessing, and mitigating risks.
+        </p>
+        <div class="btn-text">
+            <button class="btn">CTA</button>
+            <p class="read">Read More</p>
+        </div>
+
+    </div>
+    <div class="ti-paragraph">
+        <p class="p1"></p>
+    </div>
+</body>
+
+<script>
+
+let allowit = false;
+
+    function resetTransformations() {
+
+        if (allowit){
+
+        // Reset transformations of the pentagon and other elements
+        const title1Elements = document.querySelectorAll('.title-1,.title-2, .title-3, .title-4, .title-5');
+
+            // Loop through each element with the class .title-1
+            title1Elements.forEach(titleElement => {
+                // Find the <br> elements within the current element
+                const brElements = titleElement.querySelectorAll('br');
+
+                // Loop through each <br> element and hide it
+                brElements.forEach(br => {
+                    br.style.display = 'flex';
+                });
+            });
+
+            const titles = document.querySelectorAll('.title-1,.title-2, .title-3, .title-4, .title-5, .v1,.v2,.v3,.v4,.v5');
+            titles.forEach(title => {
+                title.style.transition = 'none'; // Adding transition for smooth opacity change
+                title.style.opacity = '1'; // Hide titles during animation
+            });
+
+            
+
+            document.querySelectorAll('.line').forEach(element => {
+                element.style.transform = 'none'; // Apply animation
+                element.style.transition = 'none'; // Adding transition for smooth opacity change
+                element.style.display = 'none';
+            });
+
+            document.querySelectorAll('.btn-text').forEach(element => {
+                element.style.display = 'none';
+            });
+
+            const originalCoordinates = [
+            '374,146,42',
+            '588,294,43',
+            '507,541,43',
+            '259,541,43',
+            '162,306,42'
+        ];
+
+        document.querySelectorAll('.area1,.area2,.area3,.area4,.area5').forEach((area, index) => {
+            area.setAttribute('coords', originalCoordinates[index]);
+            area.removeAttribute('href'); // Remove href attribute to disable the link
+            area.style.cursor = 'pointer'; // Change cursor style to indicate it's disabled
+            area.setAttribute('aria-disabled', false); // Optionally, set aria-disabled attribute for accessibility
+        });
+
+            // Hide all paragraphs
+            document.querySelectorAll('.paragraph1').forEach(paragraph => {
+                paragraph.style.display = 'none';
+            });
+
+            // const title1 = document.querySelectorAll('.title-1');
+            // title2.forEach(title => {
+            //     title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+            //     title.style.top = '440px'
+            //     title.style.left = 'calc(50% + 440px)';
+            //     title.style.opacity = '1';
+
+            // });
+
+            const title2 = document.querySelectorAll('.title-2');
+            title2.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                
+                if (window.innerWidth <= 1350) {
+            title.style.left = 'calc(50% + 432px)';
+            title.style.top = '432px'
+        } else {
+            title.style.left = 'calc(50% + 440px)';
+            title.style.top = '440px'
+        }
+                title.style.opacity = '1';
+
+            });
+
+            
+
+            const title3 = document.querySelectorAll('.title-3');
+            title3.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.top = '640px'
+                if(window.innerWidth <= 1350){
+                    title.style.left = 'calc(50% + 354px)';
+                }else{
+                title.style.left = 'calc(50% + 380px)';
+                }
+                title.style.opacity = '1';
+
+            });
+            const title4 = document.querySelectorAll('.title-4');
+            title4.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.top = '640px'
+                if(window.innerWidth <= 1350){
+                    title.style.left = 'calc(50% + -376px)'
+                }else{
+                title.style.left = 'calc(50% + -440px)';
+                }
+                title.style.opacity = '1';
+
+            });
+            const title5 = document.querySelectorAll('.title-5');
+            title5.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.top = '440px'
+                if(window.innerWidth <= 1350){
+                    title.style.left = 'calc(50% + -440px)'
+                }else{
+                title.style.left = 'calc(50% + -495px)';
+                }
+                title.style.opacity = '1';
+
+            });
+
+
+            const otherElements = document.querySelectorAll('#pentagon');
+            otherElements.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.transform = ' translateY(-50%) translateX(-50%) '; // Apply animation
+                element.src = './files/pentagon.png';
+
+            });
+
+            const circleImage = document.querySelectorAll('.centered-image-2, .centered-image-3, .centered-image-4');
+            circleImage.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out 0s'; // Adding transition for smooth animation
+                element.style.top = '500px';
+                element.style.transform = ' translateY(-50%) translateX(-50%) '; // Apply animation
+
+            });
+
+            const imgElement = document.querySelectorAll('.dot1');
+            imgElement.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out 0s'; // Adding transition for smooth animation
+                if(window.innerWidth <= 1350){
+                    element.style.top = '447px';
+                }else{
+                element.style.top = '440px';
+                }
+                element.style.transform = 'translateX(-50%)';
+                // element.src = './files/pentagon.png';
+            })
+
+    }
+}
+
+    
+
+    // Add an event listener to the "3CS" text to reset the transformations when clicked
+    document.querySelector('.dot1').addEventListener('click', resetTransformations);
+
+    
+
+    document.querySelectorAll('.area1').forEach(area => {
+        area.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default action
+            allowit = true;
+
+            const title1Elements = document.querySelectorAll('.title-1');
+
+            // Loop through each element with the class .title-1
+            title1Elements.forEach(titleElement => {
+                // Find the <br> elements within the current element
+                const brElements = titleElement.querySelectorAll('br');
+
+                // Loop through each <br> element and hide it
+                brElements.forEach(br => {
+                    br.style.display = 'none';
+                });
+            });
+
+            const titles = document.querySelectorAll('.title-2, .title-3, .title-4, .title-5, .v1,.v2,.v3,.v4,.v5');
+            titles.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.opacity = '0'; // Hide titles during animation
+            });
+
+            const title = document.querySelectorAll('.title-1');
+            title.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.left = 'calc(50% + 220px)';
+                title.style.top = '248px';
+                title.style.opacity = '1';
+
+            });
+
+            document.querySelectorAll('.line').forEach(element => {
+                element.style.transform = ' rotate(360deg)'; // Apply animation
+                element.style.transition = 'opacity 1s ease-in-out'; // Adding transition for smooth opacity change
+                element.style.display = 'flex';
+            });
+
+            document.querySelectorAll('.btn-text').forEach(element => {
+                element.style.display = 'flex';
+            });
+
+            document.querySelectorAll('.area1,.area2,.area3,.area4,.area5').forEach(area => {
+                area.removeAttribute('coords')
+                area.removeAttribute('href'); // Remove href attribute to disable the link
+                area.style.cursor = ''; // Change cursor style to indicate it's disabled
+                area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+            });
+
+            // Hide all paragraphs
+            document.querySelectorAll('.paragraph1').forEach(paragraph => {
+                paragraph.style.display = 'none';
+            });
+
+
+            document.querySelectorAll('#para1').forEach(paragraph => {
+                paragraph.style.display = 'flex';
+                paragraph.style.left = '280px';
+                // paragraph.style.width = 'fit-content';
+            });
+
+
+
+            const otherElements = document.querySelectorAll('#pentagon');
+            otherElements.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.transform = ' translateX(-90%) translateY(-50%) rotate(-360deg)'; // Apply animation
+
+            });
+
+            const circleImage = document.querySelectorAll('.centered-image-2, .centered-image-3, .centered-image-4');
+            circleImage.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.top = '400px';
+                element.style.transform = ' translateX(-200%)  '; // Apply animation
+
+            });
+
+            const imgElement = document.querySelectorAll('.dot1');
+            imgElement.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.top = '440px';
+                element.style.transform = 'translateX(-480%)';
+                // element.src = './files/pentagon.png';
+            })
+
+            area.classList.add('clicked'); // Add class to clicked area
+        });
+    });
+    // area2
+
+    document.querySelectorAll('.area2').forEach(area => {
+        area.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default action
+            allowit = true; 
+
+            const title1Elements = document.querySelectorAll('.title-2');
+
+            // Loop through each element with the class .title-1
+            title1Elements.forEach(titleElement => {
+                // Find the <br> elements within the current element
+                const brElements = titleElement.querySelectorAll('br');
+
+                // Loop through each <br> element and hide it
+                brElements.forEach(br => {
+                    br.style.display = 'none';
+                });
+            });
+
+            const titles = document.querySelectorAll('.title-1, .title-3, .title-4, .title-5, .v1,.v2,.v3,.v4,.v5');
+            titles.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.opacity = '0'; // Hide titles during animation
+            });
+
+            document.querySelectorAll('.line').forEach(element => {
+                element.style.transform = ' rotate(360deg)'; // Apply animation
+                element.style.transition = 'opacity 1s ease-in-out'; // Adding transition for smooth opacity change
+                element.style.display = 'flex';
+            });
+
+            const title = document.querySelectorAll('.title-2');
+            title.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.top = '255px'
+                title.style.left = 'calc(50% + 220px)';
+                title.style.opacity = '1';
+
+            });
+
+            document.querySelectorAll('.btn-text').forEach(element => {
+                element.style.display = 'flex';
+            });
+
+            document.querySelectorAll('.area1,.area2,.area3,.area4,.area5').forEach(area => {
+                area.removeAttribute('coords')
+                area.removeAttribute('href'); // Remove href attribute to disable the link
+                area.style.cursor = ''; // Change cursor style to indicate it's disabled
+                area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+            });
+
+            // Hide all paragraphs
+            document.querySelectorAll('.paragraph1').forEach(paragraph => {
+                paragraph.style.display = 'none';
+            });
+
+            // Show the specific paragraph related to the clicked area
+            document.querySelectorAll('#para2').forEach(paragraph => {
+                paragraph.style.display = 'flex';
+                paragraph.style.left = '250px';
+                // paragraph.style.width = 'fit-content';
+            });
+
+            const otherElements = document.querySelectorAll('#pentagon');
+            otherElements.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.transform = ' translateX(-88%) translateY(-49.5%) rotate(-361.5deg)'; // Apply animation
+                element.src = './files/pantagon-eye.png';
+                element.style.width='auto';
+                element.style.height='680.78px';
+
+            });
+
+            const circleImage = document.querySelectorAll('.centered-image-2, .centered-image-3, .centered-image-4');
+            circleImage.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.top = '400px';
+                if (window.innerWidth <= 1350){
+                    element.style.transform = ' translateX(-210%)  ';
+                }else{
+                element.style.transform = ' translateX(-200%)  '; // Apply animation
+                }
+
+            });
+
+            const imgElement = document.querySelectorAll('.dot1');
+            imgElement.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.top = '440px';
+                if(window.innerWidth <= 1350){
+                    element.style.transform = 'translateX(-506%)'
+                }else{
+                element.style.transform = 'translateX(-480%)';
+                }
+                // element.src = './files/pentagon.png';
+            })
+
+            area.classList.add('clicked'); // Add class to clicked area
+        });
+    });
+
+    // area3
+
+    document.querySelectorAll('.area3').forEach(area => {
+        area.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default action
+            allowit = true;
+
+            const title1Elements = document.querySelectorAll('.title-3');
+
+            // Loop through each element with the class .title-1
+            title1Elements.forEach(titleElement => {
+                // Find the <br> elements within the current element
+                const brElements = titleElement.querySelectorAll('br');
+
+                // Loop through each <br> element and hide it
+                brElements.forEach(br => {
+                    br.style.display = 'none';
+                });
+            });
+
+            const titles = document.querySelectorAll('.title-2, .title-1, .title-4, .title-5, .v1,.v2,.v3,.v4,.v5');
+            titles.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.opacity = '0'; // Hide titles during animation
+            });
+
+            const title = document.querySelectorAll('.title-3');
+            title.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+
+                title.style.left = 'calc(50% + 240px)';
+                title.style.top = '255px';
+                title.style.opacity = '1';
+
+            });
+
+            document.querySelectorAll('.line').forEach(element => {
+                element.style.transform = ' rotate(360deg)'; // Apply animation
+                element.style.transition = 'opacity 1s ease-in-out'; // Adding transition for smooth opacity change
+                element.style.display = 'flex';
+            });
+
+            document.querySelectorAll('.area1,.area2,.area3,.area4,.area5').forEach(area => {
+                area.removeAttribute('coords')
+                area.removeAttribute('href'); // Remove href attribute to disable the link
+                area.style.cursor = ''; // Change cursor style to indicate it's disabled
+                area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+            });
+
+            document.querySelectorAll('.btn-text').forEach(element => {
+                element.style.display = 'flex';
+            });
+
+            // Hide all paragraphs
+            document.querySelectorAll('.paragraph1').forEach(paragraph => {
+                paragraph.style.display = 'none';
+            });
+
+            // Show the specific paragraph related to the clicked area
+            document.querySelectorAll('#para3').forEach(paragraph => {
+                paragraph.style.display = 'flex';
+                paragraph.style.left = '260px';
+            });
+            
+
+            const otherElements = document.querySelectorAll('#pentagon');
+            otherElements.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.transform = ' translateX(-92.5%) translateY(-49%) rotate(-361.5deg)'; // Apply animation
+                element.src = './files/pentagon-box-fire.png';
+                element.style.width='auto';
+                element.style.height='680.78px';
+
+            });
+
+            const circleImage = document.querySelectorAll('.centered-image-2, .centered-image-3, .centered-image-4');
+            circleImage.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.top = '400px';
+                if(window.innerWidth <= 1350){
+                    element.style.transform = ' translateX(-210%)  ';
+                }else{
+                element.style.transform = ' translateX(-200%)  '; // Apply animation
+                }
+
+            });
+
+            const imgElement = document.querySelectorAll('.dot1');
+            imgElement.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.top = '440px';
+                if(window.innerWidth <= 1350){
+                    element.style.top = '443px';
+                    element.style.transform = 'translateX(-507%)';
+                }else{
+                element.style.transform = 'translateX(-480%)';
+                element.style.top = '440px';
+                
+                }
+                
+            })
+
+            area.classList.add('clicked'); // Add class to clicked area
+        });
+    });
+
+
+    // area4
+
+    document.querySelectorAll('.area4').forEach(area => {
+        area.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default action
+            allowit = true;
+
+            const title1Elements = document.querySelectorAll('.title-4');
+
+            // Loop through each element with the class .title-1
+            title1Elements.forEach(titleElement => {
+                // Find the <br> elements within the current element
+                const brElements = titleElement.querySelectorAll('br');
+
+                // Loop through each <br> element and hide it
+                brElements.forEach(br => {
+                    br.style.display = 'none';
+                });
+            });
+
+            const titles = document.querySelectorAll('.title-2, .title-3, .title-1, .title-5, .v1,.v2,.v3,.v4,.v5');
+            titles.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.opacity = '0'; // Hide titles during animation
+            });
+
+            const title = document.querySelectorAll('.title-4');
+            title.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+
+                title.style.left = 'calc(50% + 165px)';
+                title.style.top = '255px';
+                title.style.opacity = '1';
+
+            });
+
+            document.querySelectorAll('.line').forEach(element => {
+                element.style.transform = ' rotate(360deg)'; // Apply animation
+                element.style.transition = 'opacity 1s ease-in-out'; // Adding transition for smooth opacity change
+                element.style.display = 'flex';
+            });
+
+            document.querySelectorAll('.area1,.area2,.area3,.area4,.area5').forEach(area => {
+                area.removeAttribute('coords')
+                area.removeAttribute('href'); // Remove href attribute to disable the link
+                area.style.cursor = ''; // Change cursor style to indicate it's disabled
+                area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+            });
+
+            document.querySelectorAll('.btn-text').forEach(element => {
+                element.style.display = 'flex';
+            });
+
+            // Hide all paragraphs
+            document.querySelectorAll('.paragraph1').forEach(paragraph => {
+                paragraph.style.display = 'none';
+            });
+
+            // Show the specific paragraph related to the clicked area
+            document.querySelectorAll('#para1').forEach(paragraph => {
+                paragraph.style.display = 'flex';
+                paragraph.style.left = '275px';
+            });
+            
+
+            const otherElements = document.querySelectorAll('#pentagon');
+            otherElements.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.transform = ' translateX(-93%) translateY(-48%) rotate(-359.5deg)'; // Apply animation
+                element.src = './files/pentagon-book.png';
+                element.style.width='auto';
+                element.style.height='680.78px';
+
+            });
+
+            const circleImage = document.querySelectorAll('.centered-image-2, .centered-image-3, .centered-image-4');
+            circleImage.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.top = '400px';
+                if(window.innerWidth <= 1350){
+                    element.style.transform = ' translateX(-210%)  ';
+                }else{
+                element.style.transform = ' translateX(-200%)  '; // Apply animation
+                }
+
+            });
+
+            const imgElement = document.querySelectorAll('.dot1');
+            imgElement.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                if(window.innerWidth <= 1350){
+                    element.style.top = '443px';
+                    element.style.transform = 'translateX(-507%)';
+
+                }else{
+                element.style.top = '440px';
+                element.style.transform = 'translateX(-480%)';
+                }
+            })
+
+            area.classList.add('clicked'); // Add class to clicked area
+        });
+    });
+
+    // area5
+
+    document.querySelectorAll('.area5').forEach(area => {
+        area.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default action
+            allowit = true;
+
+            const title1Elements = document.querySelectorAll('.title-5');
+
+            // Loop through each element with the class .title-1
+            title1Elements.forEach(titleElement => {
+                // Find the <br> elements within the current element
+                const brElements = titleElement.querySelectorAll('br');
+
+                // Loop through each <br> element and hide it
+                brElements.forEach(br => {
+                    br.style.display = 'none';
+                });
+            });
+
+            const titles = document.querySelectorAll('.title-2, .title-3, .title-4, .title-1, .v1,.v2,.v3,.v4,.v5');
+            titles.forEach(title => {
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+                title.style.opacity = '0'; // Hide titles during animation
+            });
+
+            const title = document.querySelectorAll('.title-5');
+            title.forEach(title => {
+
+                title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+
+                title.style.left = 'calc(50% + 220px)';
+                title.style.top = '257px';
+                title.style.opacity = '1';
+
+            });
+
+            document.querySelectorAll('.line').forEach(element => {
+                element.style.transform = ' rotate(360deg)'; // Apply animation
+                element.style.transition = 'opacity 1s ease-in-out'; // Adding transition for smooth opacity change
+                element.style.display = 'flex';
+            });
+
+            document.querySelectorAll('.area1,.area2,.area3,.area4,.area5').forEach(area => {
+                area.removeAttribute('coords')
+                area.removeAttribute('href'); // Remove href attribute to disable the link
+                area.style.cursor = ''; // Change cursor style to indicate it's disabled
+                area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+            });
+
+            document.querySelectorAll('.btn-text').forEach(element => {
+                element.style.display = 'flex';
+            });
+
+            // Hide all paragraphs
+            document.querySelectorAll('.paragraph1').forEach(paragraph => {
+                paragraph.style.display = 'none';
+            });
+
+            // Show the specific paragraph related to the clicked area
+            document.querySelectorAll('#para1').forEach(paragraph => {
+                paragraph.style.display = 'flex';
+                paragraph.style.left = '275px';
+            });
+
+            const otherElements = document.querySelectorAll('#pentagon');
+            otherElements.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.transform = ' translateX(-99%) translateY(-49%) rotate(-361deg)'; // Apply animation
+                element.src = './files/pentagon-fire.png';
+                element.style.width='auto';
+                element.style.height='680.78px';
+
+            });
+
+            const circleImage = document.querySelectorAll('.centered-image-2, .centered-image-3, .centered-image-4');
+            circleImage.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                element.style.top = '400px';
+                if(window.innerWidth <= 1350){
+                    element.style.transform = ' translateX(-210%)  ';
+                }else{
+                element.style.transform = ' translateX(-200%)  '; // Apply animation
+                }
+
+            });
+
+            const imgElement = document.querySelectorAll('.dot1');
+            imgElement.forEach(element => {
+
+                element.style.transition = 'transform 400ms ease-in-out'; // Adding transition for smooth animation
+                if(window.innerWidth <= 1350){
+                    element.style.top = '443px';
+                    element.style.transform = 'translateX(-507%)';
+
+                }else{
+                element.style.top = '440px';
+                element.style.transform = 'translateX(-480%)';
+                }
+            })
+
+            area.classList.add('clicked'); // Add class to clicked area
+        });
+    });
+</script>
+
+</html>

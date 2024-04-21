@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Infographic</title>
+    <style>
+      /* CSS Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        /* Adjust as needed */
+        margin: 0 auto;
+
+        box-sizing: border-box;
+      }
+
+      .full-width {
+        position: relative;
+
+        z-index: 1;
+        /* Ensure text is on top of the icons */
+      }
+
+      .full-width img {
+        width: 100%;
+        display: block;
+        position: absolute;
+      }
+
+      .penta {
+        position: absolute;
+        top: 110px;
+        left: 25%;
+        transform: translateX(-50%);
+      }
+
+      p {
+        position: absolute;
+
+        width: 100%;
+        margin-top: 40px;
+
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        z-index: 2;
+        /* Ensure text is on top of the icons */
+      }
+
+      p.paragraph {
+        position: absolute;
+        top: 5%;
+        width: 100%;
+        margin-top: 100px;
+
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        z-index: 2;
+        /* Ensure text is on top of the icons */
+      }
+
+      .orange {
+        color: orange;
+      }
+
+      img.l1 {
+        left: 320px;
+        top: 50px;
+        z-index: -1;
+      }
+
+      p.title1 {
+        position: absolute;
+        left: 400px;
+        top: 30px;
+        font-size: 23.5px;
+      }
+
+      .t1 {
+        left: 475px;
+        top: 30px;
+      }
+
+      img.l2 {
+        left: 500px;
+        top: 215px;
+        z-index: -1;
+      }
+
+      h3.title2 {
+        position: absolute;
+        left: 550px;
+        top: 215px;
+      }
+
+      img.l3 {
+        left: 440px;
+        top: 385px;
+        z-index: -1;
+      }
+
+      h3.title3 {
+        position: absolute;
+        left: 480px;
+        top: 385px;
+      }
+
+      img.l4 {
+        right: -100px;
+        transform: scale(-1) scaleY(-1);
+        top: 200px;
+        z-index: -1;
+      }
+
+      h3.title4 {
+        position: absolute;
+        right: -0px;
+        top: 200px;
+      }
+
+      img.l5 {
+        transform: scale(-1) scaleY(-1);
+        top: 390px;
+        left: -125px;
+        z-index: -1;
+      }
+
+      h3.title5 {
+        position: absolute;
+        top: 390px;
+        left: -110px;
+      }
+
+      .text-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        /* Adjust as needed */
+      }
+
+      .dot {
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 60px;
+        display: flex;
+        height: 70px;
+        width: 70px;
+        background-color: white;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        left: 60px;
+      }
+
+      img.line {
+        left: 270px;
+        z-index: -1;
+        height: 6px;
+        width: 70%;
+        top: 115px;
+      }
+
+      @keyframes lineAnimation {
+        0% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* Apply the animation to the line with a delay of 1s */
+      img.line {
+        animation: lineAnimation 2s ease-in-out 1s forwards;
+      }
+
+      .con {
+        position: relative;
+        width: 190px;
+        /* Adjust as needed */
+        height: 190px;
+        /* Adjust as needed */
+        left: -50px;
+        top: 347px;
+        z-index: 1;
+      }
+
+      .image1,
+      .image2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        /* Initially hide both images */
+        animation-fill-mode: forwards;
+        /* Maintain final state of animation */
+      }
+
+      .image1 {
+        animation: fadein 2s linear infinite;
+        /* Fade in the first image over 2 seconds, loop infinitely */
+      }
+
+      .image2 {
+        animation: fadein 2s linear 0.8s infinite;
+        /* Fade in the second image over 2 seconds, with a delay of 1 second, loop infinitely */
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotateTranslate {
+        0% {
+          transform: rotate(0deg) translateY(0%);
+        }
+
+        100% {
+          transform: rotate(360deg) translateY(-50%);
+        }
+      }
+
+      .area {
+        cursor: pointer;
+      }
+
+      .penta {
+        top: 150px;
+        transition: transform 1s ease-in-out;
+      }
+
+      .area.clicked {
+        animation: rotateTranslate 1s ease-in-out;
+      }
+
+      .text-item,
+      .l2,
+      .l3,
+      .l4,
+      .l5 {
+        transition: transform 1s ease-in-out;
+      }
+
+      .title2,
+      .title3,
+      .title4,
+      .title5 {
+        transition: opacity 1s ease-in-out;
+      }
+
+      p.paragraph1 {
+        display: none;
+        opacity: 0;
+        /* Initially hide the paragraph */
+        position: relative;
+        /* Set position to relative */
+        top: -20px;
+        /* Move the paragraph up */
+        animation: slideIn 0.5s forwards;
+        /* Apply animation */
+        left: 650px;
+        top: 120px;
+      }
+
+      /* Define the animation */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          top: -20px;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .full {
+        width: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+
+      @media (min-width: 1300px) {
+        .con {
+          left: -20px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+        .con {
+          left: -74px;
+        }
+
+        img.l1 {
+          width: 385px !important;
+          height: 103px;
+          left: 320px;
+          top: 50px;
+          z-index: -1;
+        }
+        img.l2 {
+          width: 385px !important;
+          height: 103px;
+
+          left: 500px;
+          top: 215px;
+
+          z-index: -1;
+        }
+
+        img.l3 {
+          width: 385px !important;
+          height: 103px;
+
+          z-index: -1;
+        }
+        img.l4 {
+          width: 355.1px !important;
+          height: 103px;
+
+          z-index: -1;
+        }
+
+        img.l5 {
+          width: 385px !important;
+          height: 103px;
+          top: 380px;
+          left: -206px;
+          z-index: -1;
+        }
+
+        p.title1 {
+          position: absolute;
+          left: 400px;
+          top: 36px;
+          font-size: 22px;
+          width: 264px;
+          text-align: left;
+        }
+        h3.title2 {
+          position: absolute;
+          left: 585px;
+          top: 220px;
+
+          font-size: 22px;
+          width: 264px;
+          text-align: left;
+        }
+        h3.title3 {
+          position: absolute;
+          left: 518px;
+          top: 394px;
+
+          font-size: 20px;
+          width: 284px;
+          text-align: left;
+        }
+        h3.title4 {
+          position: absolute;
+          right: -14px;
+          top: 203px;
+          font-size: 22px;
+          width: 240px;
+          text-align: left;
+        }
+        h3.title5 {
+          position: absolute;
+          top: 383px;
+          left: -170px;
+          font-size: 22px;
+          width: 240px;
+          text-align: left;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1024px) {
+        img.l1 {
+          width: 250px !important;
+          left: 320px;
+          top: 50px;
+          z-index: -1;
+        }
+
+        p.title1 {
+          position: absolute;
+          left: 400px;
+          top: 30px;
+          font-size: 18px;
+        }
+
+        .t1 {
+          left: 475px;
+          top: 30px;
+        }
+
+        img.l2 {
+          width: 250px !important;
+          left: 500px;
+          top: 215px;
+          z-index: -1;
+        }
+
+        h3.title2 {
+          font-size: 18px;
+          position: absolute;
+          left: 550px;
+          top: 215px;
+        }
+
+        img.l3 {
+          width: 250px !important;
+          left: 440px;
+          top: 385px;
+          z-index: -1;
+        }
+
+        h3.title3 {
+          font-size: 18px;
+          position: absolute;
+          left: 480px;
+          top: 385px;
+        }
+
+        img.l4 {
+          width: 250px !important;
+          right: -100px;
+          transform: scale(-1) scaleY(-1);
+          top: 200px;
+          z-index: -1;
+        }
+
+        h3.title4 {
+          font-size: 18px;
+          position: absolute;
+          right: -0px;
+          top: 200px;
+        }
+
+        img.l5 {
+          width: 250px !important;
+          transform: scale(-1) scaleY(-1);
+          top: 390px;
+          left: -125px;
+          z-index: -1;
+        }
+
+        h3.title5 {
+          font-size: 18px;
+          position: absolute;
+          top: 390px;
+          left: -110px;
+        }
+
+        /* CSS rules for tablets (landscape) and laptops */
+
+        .con {
+          position: relative;
+          width: 120px;
+          /* Adjust as needed */
+          height: 120px;
+          /* Adjust as needed */
+          left: 50px;
+          top: 380px;
+          z-index: 1;
+        }
+
+        .dot {
+          cursor: pointer;
+          font-family: Arial, Helvetica, sans-serif;
+          top: 25px;
+          display: flex;
+          height: 70px;
+          width: 70px;
+          background-color: white;
+          border-radius: 50%;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+          left: 25px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="full-width">
+        <p style="font-size: 30px; font-weight: 700">
+          <span class="orange">3CS – Concertium’s</span> Collective Coverage
+          Suite
+        </p>
+        <p class="paragraph">
+          Introducing 3CS, Concertium's proprietary modernized Security
+          Operations methodology for the Enterprise.<br />
+          Defend and neutralize sophisticated threats with precision while
+          receiving expert guidance on compliance, risk, and post-breach
+          strategies
+        </p>
+
+        <div class="full">
+          <img class="back" src="./files/back-color.jpg" />
+          <div class="con">
+            <img class="image1" src="./files/1Frame.png" alt="First Image" />
+            <img class="image2" src="./files/2Frame.png" alt="Second Image" />
+
+            <p
+              class="dot"
+              style="
+                color: black;
+                background-color: white;
+                font-weight: 800;
+                font-size: 25px;
+              "
+            >
+              3CS
+            </p>
+          </div>
+          <div class="penta">
+            <img
+              id="pentagon"
+              src="./files/pentagon.png"
+              style="width: 600px"
+              usemap="#image-map"
+            />
+            <map name="image-map">
+              <area
+                onclick="toggleParagraph('para1')"
+                class="area1"
+                target=""
+                alt=""
+                title=""
+                href=""
+                coords="301,117,35"
+                shape="circle"
+              />
+              <area
+                onclick="toggleParagraph('para2')"
+                class="area2"
+                target=""
+                alt=""
+                title=""
+                href=""
+                coords="407,435,34"
+                shape="circle"
+              />
+              <area
+                onclick="toggleParagraph('para3')"
+                class="area3"
+                target=""
+                alt=""
+                title=""
+                href=""
+                coords="130,246,34"
+                shape="circle"
+              />
+              <area
+                onclick="toggleParagraph('para4')"
+                class="area4"
+                target=""
+                alt=""
+                title=""
+                href=""
+                coords="208,435,35"
+                shape="circle"
+              />
+              <area
+                onclick="toggleParagraph('para5')"
+                class="area5"
+                target=""
+                alt=""
+                title=""
+                href=""
+                coords="472,236,34"
+                shape="circle"
+              />
+            </map>
+            <div>
+              <img class="line" src="./files/line.png" />
+            </div>
+            <div>
+              <img class="l1" src="./files/Vector.png" />
+              <div>
+                <p style="font-weight: 600" class="title1">
+                  Material Breach Monitoring & Alerting
+                </p>
+              </div>
+
+              <p id="para1" class="paragraph1">
+                Concertium presents a revolutionary approach to
+                <br />cybersecurity: Threat Precognition as a Service (TPaaS).
+                This<br />
+                cutting-edge offering leverages the power of artificial<br />
+                intelligence to predict and prevent cyber attacks before they<br />
+                occur in your organization, as well as your trusted partners<br />
+                and supply-chain.
+              </p>
+            </div>
+            <div>
+              <img class="l2" src="./files/Vector.png" />
+              <div>
+                <h3 class="title2" style="color: white">
+                  AI-Enhanced Advanced Observability
+                </h3>
+              </div>
+              <p id="para2" class="paragraph1">
+                Concertium's Automated Threat Detection and Elimination<br />
+                solutions empower you to neutralize cyber threats with<br />
+                unparalleled speed and efficiency without human<br />
+                intervention. Our cutting-edge technology continuously<br />
+                monitors your environment, automatically detecting and<br />
+                eliminating material threats before they can cause<br />
+                significant damage.
+              </p>
+            </div>
+            <div>
+              <img class="l3" src="./files/Vector.png" />
+              <h3 class="title3" style="color: white">
+                Automated Threat Detection & Elimination (ATDE)
+              </h3>
+              <p id="para3" class="paragraph1">
+                Concertium understands the criticality of managing<br />
+                material cyber breaches in today's ever-evolving threat<br />
+                landscape not only from a threat perspective, but also<br />
+                from a regulatory one. Our Material Cyber Breach<br />
+                Management service provides a comprehensive and<br />
+                strategic approach to handling these complex<br />
+                situations.
+              </p>
+            </div>
+            <div>
+              <img class="l4" src="./files/Vector.png" />
+              <h3 class="title4" style="color: white">
+                Compliance & Risk Advisory Services
+              </h3>
+              <p id="para4" class="paragraph1">
+                Concertium empowers you to navigate the ever-evolving
+                <br />compliance landscape with confidence through our<br />
+                comprehensive Compliance and Risk Management<br />
+                Advisory Services. We provide a strategic and data-<br />driven
+                approach to help you achieve and maintain<br />
+                compliance with various regulations, while effectively<br />
+                identifying, assessing, and mitigating risks.
+              </p>
+            </div>
+            <div>
+              <img class="l5" src="./files/Vector.png" />
+              <h3 class="title5" style="color: white">
+                Post Breach<br />
+                Management
+              </h3>
+
+              <p id="para5" class="paragraph1">
+                Concertium empowers you to gain unprecedented<br />visibility
+                into your IT infrastructure with our<br />
+                Advanced Cyber Observability solutions.Traditional<br />
+                security tools often struggle to keep pace with the<br />
+                ever-evolving threat landscape, leaving blind spots<br />
+                that attackers can exploit. Concertium's solutions go<br />
+                beyond basic monitoring, providing a comprehensive<br />
+                view of your network activity, user behavior, and<br />
+                system health.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function resetTransformations() {
+      // Reset transformations of the pentagon and other elements
+      const pentagon = document.getElementById('pentagon');
+      pentagon.style.transition = 'none';
+      pentagon.style.transform = 'none';
+
+      const imgElements = document.querySelectorAll('.con');
+      imgElements.forEach((element) => {
+        element.style.transition = 'none';
+        element.style.transform = 'none';
+      });
+      document.querySelectorAll('.paragraph1').forEach((paragraph) => {
+        paragraph.style.display = 'none';
+      });
+
+      const titles = document.querySelectorAll(
+        '.title1, .title2, .title3, .title4, .title5, .l1,.l2,.l3,.l4,.l5'
+      );
+      titles.forEach((title) => {
+        title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+        title.style.opacity = '1'; // Hide titles during animation
+      });
+
+      const title1 = document.querySelectorAll('.title1');
+      title1.forEach((title1) => {
+        title1.style.left = '400px';
+        title1.style.top = '30px';
+      });
+
+      const title2 = document.querySelectorAll('.title2');
+      title2.forEach((title2) => {
+        title2.style.left = '550px';
+        title2.style.top = '220px';
+      });
+
+      const title3 = document.querySelectorAll('.title3');
+      title3.forEach((title3) => {
+        title3.style.left = '500px';
+        title3.style.top = '400px';
+      });
+
+      const title4 = document.querySelectorAll('.title4');
+      title4.forEach((title4) => {
+        title4.style.left = '-120px';
+        title4.style.top = '200px';
+      });
+
+      const title5 = document.querySelectorAll('.title5');
+      title5.forEach((title5) => {
+        title5.style.left = '-105px';
+        title5.style.top = '390px';
+      });
+
+      const originalCoordinates = [
+        '301,117,35',
+        '407,435,34',
+        '130,246,34',
+        '208,435,35',
+        '472,236,34',
+      ];
+
+      document
+        .querySelectorAll('.area1,.area2,.area3,.area4,.area5')
+        .forEach((area, index) => {
+          area.setAttribute('coords', originalCoordinates[index]);
+          area.removeAttribute('href'); // Remove href attribute to disable the link
+          area.style.cursor = 'pointer'; // Change cursor style to indicate it's disabled
+          area.setAttribute('aria-disabled', false); // Optionally, set aria-disabled attribute for accessibility
+        });
+
+      const fullElement = document.querySelector('.full');
+
+      // Set its CSS properties using JavaScript
+      fullElement.style.width = '100%';
+      fullElement.style.display = 'flex';
+      fullElement.style.alignContent = 'center';
+      fullElement.style.justifyContent = 'center';
+    }
+
+    // Add an event listener to the "3CS" text to reset the transformations when clicked
+    document
+      .querySelector('.dot')
+      .addEventListener('click', resetTransformations);
+
+    document.querySelectorAll('.area1').forEach((area) => {
+      area.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default action
+
+        const fullElement = document.querySelector('.full');
+
+        // Set its CSS properties using JavaScript
+        fullElement.style.width = '100%';
+        fullElement.style.display = 'flex';
+        fullElement.style.alignContent = 'center';
+        fullElement.style.justifyContent = 'center';
+
+        document
+          .querySelectorAll('.area1,.area2,.area3,.area4,.area5')
+          .forEach((area) => {
+            area.removeAttribute('coords');
+            area.removeAttribute('href'); // Remove href attribute to disable the link
+            area.style.cursor = ''; // Change cursor style to indicate it's disabled
+            area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+          });
+
+        // Hide all paragraphs
+        document.querySelectorAll('.paragraph1').forEach((paragraph) => {
+          paragraph.style.display = 'none';
+        });
+
+        // Show the specific paragraph related to the clicked area
+        document.getElementById('para1').style.display = 'flex';
+
+        // Perform other animations or actions if needed
+        const otherElements = document.querySelectorAll('#pentagon');
+        otherElements.forEach((element) => {
+          element.style.transition = 'transform 700ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform = ' rotate(-360deg)'; // Apply animation
+          area.setAttribute('disabled', true);
+        });
+
+        const imgElement = document.querySelectorAll('.con');
+        imgElement.forEach((element) => {
+          element.style.transition = 'transform 510ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform = 'translateX(-140%)';
+          element.style.left = '-81px';
+        });
+
+        const title = document.querySelectorAll('.title1');
+        title.forEach((title) => {
+          title.style.left = '500px';
+          title.style.top = '65px';
+        });
+
+        const titles = document.querySelectorAll(
+          '.title2, .title3, .title4, .title5, .l1,.l2,.l3,.l4,.l5'
+        );
+        titles.forEach((title) => {
+          title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+          title.style.opacity = '0'; // Hide titles during animation
+        });
+
+        area.classList.add('clicked'); // Add class to clicked area
+      });
+    });
+
+    document.querySelectorAll('.area2').forEach((area) => {
+      area.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default action
+
+        document
+          .querySelectorAll('.area1,.area2,.area3,.area4,.area5')
+          .forEach((area) => {
+            area.removeAttribute('coords');
+            area.removeAttribute('href'); // Remove href attribute to disable the link
+            area.style.cursor = ''; // Change cursor style to indicate it's disabled
+            area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+          });
+
+        // Hide all paragraphs
+        document.querySelectorAll('.paragraph1').forEach((paragraph) => {
+          paragraph.style.display = 'none';
+        });
+
+        // Show the specific paragraph related to the clicked area
+        document.getElementById('para2').style.display = 'block';
+
+        const imgElement = document.querySelectorAll('.con');
+        imgElement.forEach((element) => {
+          element.style.transition = 'transform 510ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform = 'translateX(-140%)';
+        });
+
+        const otherElements = document.querySelectorAll('#pentagon');
+        otherElements.forEach((element) => {
+          element.style.transition = 'transform 700ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform =
+            'translateX(-2%) translateY(5%) rotate(-142.5deg) '; // Apply animation
+        });
+
+        const title = document.querySelectorAll('.title3');
+        title.forEach((title) => {
+          title.style.left = '640px';
+          title.style.top = '88px';
+        });
+
+        const titles = document.querySelectorAll(
+          '.title1, .title2, .title4, .title5, .l1,.l2,.l3,.l4,.l5'
+        );
+        titles.forEach((title) => {
+          title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+          title.style.opacity = '0'; // Hide titles during animation
+        });
+        area.classList.add('clicked'); // Add class to clicked area
+      });
+    });
+
+    document.querySelectorAll('.area3').forEach((area) => {
+      area.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default action
+
+        document
+          .querySelectorAll('.area1,.area2,.area3,.area4,.area5')
+          .forEach((area) => {
+            area.removeAttribute('coords');
+            area.removeAttribute('href'); // Remove href attribute to disable the link
+            area.style.cursor = ''; // Change cursor style to indicate it's disabled
+            area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+          });
+
+        // Hide all paragraphs
+        document.querySelectorAll('.paragraph1').forEach((paragraph) => {
+          paragraph.style.display = 'none';
+        });
+
+        // Show the specific paragraph related to the clicked area
+        document.getElementById('para3').style.display = 'block';
+
+        const imgElement = document.querySelectorAll('.con');
+        imgElement.forEach((element) => {
+          element.style.transition = 'transform 510ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform = 'translateX(-150%) translateY(5%)';
+        });
+
+        const otherElements = document.querySelectorAll('#pentagon');
+        otherElements.forEach((element) => {
+          element.style.transition = 'transform 700ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform =
+            'translateX(-5%) translatey(3%) rotate(-286.5deg) '; // Apply animation
+        });
+
+        const title4 = document.querySelectorAll('.title4');
+        title4.forEach((title4) => {
+          title4.style.left = '620px';
+          title4.style.top = '88px';
+        });
+
+        const titles = document.querySelectorAll(
+          '.title1, .title2, .title3, .title5, .l1,.l2,.l3,.l4,.l5'
+        );
+        titles.forEach((title) => {
+          title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+          title.style.opacity = '0'; // Hide titles during animation
+        });
+        area.classList.add('clicked'); // Add class to clicked area
+      });
+    });
+
+    document.querySelectorAll('.area4').forEach((area) => {
+      area.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default action
+
+        document
+          .querySelectorAll('.area1,.area2,.area3,.area4,.area5')
+          .forEach((area) => {
+            area.removeAttribute('coords');
+            area.removeAttribute('href'); // Remove href attribute to disable the link
+            area.style.cursor = ''; // Change cursor style to indicate it's disabled
+            area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+          });
+
+        // Hide all paragraphs
+        document.querySelectorAll('.paragraph1').forEach((paragraph) => {
+          paragraph.style.display = 'none';
+        });
+
+        // Show the specific paragraph related to the clicked area
+        document.getElementById('para4').style.display = 'block';
+
+        const imgElement = document.querySelectorAll('.con');
+        imgElement.forEach((element) => {
+          element.style.transition = 'transform 510ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform = 'translateX(-150%) ';
+        });
+
+        const otherElements = document.querySelectorAll('#pentagon');
+        otherElements.forEach((element) => {
+          element.style.transition = 'transform 700ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform =
+            'translateX(-4%) translateY(4%) rotate(-214.5deg) '; // Apply animation
+        });
+
+        const title = document.querySelectorAll('.title5');
+        title.forEach((title) => {
+          title.style.left = '630px';
+          title.style.top = '85px';
+        });
+
+        const titles = document.querySelectorAll(
+          '.title1, .title2, .title3, .title4, .l1,.l2,.l3,.l4,.l5'
+        );
+        titles.forEach((title) => {
+          title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+          title.style.opacity = '0'; // Hide titles during animation
+        });
+        area.classList.add('clicked'); // Add class to clicked area
+      });
+    });
+
+    document.querySelectorAll('.area5').forEach((area) => {
+      area.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default action
+
+        document
+          .querySelectorAll('.area1,.area2,.area3,.area4,.area5')
+          .forEach((area) => {
+            area.removeAttribute('coords');
+            area.removeAttribute('href'); // Remove href attribute to disable the link
+            area.style.cursor = ''; // Change cursor style to indicate it's disabled
+            area.setAttribute('aria-disabled', true); // Optionally, set aria-disabled attribute for accessibility
+          });
+
+        // Hide all paragraphs
+        document.querySelectorAll('.paragraph1').forEach((paragraph) => {
+          paragraph.style.display = 'none';
+        });
+
+        // Show the specific paragraph related to the clicked area
+        document.getElementById('para5').style.display = 'block';
+
+        const imgElement = document.querySelectorAll('.con');
+        imgElement.forEach((element) => {
+          element.style.transition = 'transform 510ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform = 'translateX(-135%)';
+        });
+
+        const otherElements = document.querySelectorAll('#pentagon');
+
+        otherElements.forEach((element) => {
+          element.style.transition = 'transform 700ms ease-in-out'; // Adding transition for smooth animation
+          element.style.transform =
+            'translateX(-6%) translateY(2%) rotate(-431deg) '; // Apply animation
+        });
+
+        const title = document.querySelectorAll('.title2');
+        title.forEach((title) => {
+          title.style.left = '615px';
+          title.style.top = '80px';
+        });
+
+        const titles = document.querySelectorAll(
+          '.title1,  .title3, .title4, .title5, .l1,.l2,.l3,.l4,.l5'
+        );
+        titles.forEach((title) => {
+          title.style.transition = 'opacity 500ms ease-in-out'; // Adding transition for smooth opacity change
+          title.style.opacity = '0'; // Hide titles during animation
+        });
+        area.classList.add('clicked'); // Add class to clicked area
+      });
+    });
+  </script>
+</html>
